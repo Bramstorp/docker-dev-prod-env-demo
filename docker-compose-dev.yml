@@ -5,7 +5,7 @@ services:
         container_name: backend_dev
         build:
             context: .
-            dockerfile: ./docker/backend/Dockerfile            
+            dockerfile: ./docker/backend/Dockerfile.dev         
         entrypoint: /app/docker/backend/wsgi-entrypoint.sh
         volumes:
             - static_volume:/app/backend/server/django_static
