@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
     nginx: 
+        restart: unless-stopped
         container_name: nginx_prod
         build:
             context: .
@@ -15,10 +16,11 @@ services:
         depends_on: 
             - backend       
     backend:
+        restart: unless-stopped
         container_name: backend_prod
         build:
             context: .
-            dockerfile: ./docker/backend/Dockerfile
+            dockerfile: ./docker/backend/Dockerfile.prod
         entrypoint: /app/docker/backend/wsgi-entrypoint.sh
         volumes:
             - static_volume:/app/backend/base/django_static
