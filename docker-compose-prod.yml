@@ -12,7 +12,7 @@ services:
             - 443:443
         volumes:
             - static_volume:/app/backend/base/django_static
-            - ./docker/nginx/production:/etc/nginx/conf
+            - ./docker/nginx/production:/etc/nginx/conf.d
         depends_on: 
             - backend       
     backend:
