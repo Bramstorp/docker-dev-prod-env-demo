@@ -9,8 +9,12 @@ services:
         entrypoint: /app/docker/backend/wsgi-entrypoint.sh
         volumes:
             - static_volume:/app/backend/server/django_static
+        env_file:
+            - ./.env.dev
         ports:
-        - 8000:8000  
+            - 8000:8000
+        depends_on: 
+            - postgresql
     frontend:
         container_name: frontend_dev
         build:
@@ -23,6 +27,16 @@ services:
             - 3000:3000
         environment:
             - CHOKIDAR_USEPOLLING=true
+    postgresql:
+        container_name: postgresql_dev
+        image: postgres:12.0-alpine
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=hello_django
+            - POSTGRES_PASSWORD=hello_django
+            - POSTGRES_DB=hello_django_dev
 
 volumes:
     static_volume: {}
+    postgres_data:
