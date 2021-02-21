@@ -1,2 +1,12 @@
-# docker-dev-env-demo-test
-Docker base demo + devops tools testing env
+# docker dev / prod env
+
+Basic demo and test system usting docker react + django + postgressql + nginx
+
+
+# for building production env 
+
+build server - `docker-compose -f docker-compose-prod.yml build`
+
+start server - `docker-compose -f docker-compose-prod.yml up`
+
+close server - `docker-compose -f docker-compose-prod.yml down -v`
