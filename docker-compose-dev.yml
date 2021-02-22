@@ -17,11 +17,11 @@ services:
     frontend:
         container_name: frontend_dev
         build:
-            context: ./frontend/
+            context: ./frontend
             dockerfile: Dockerfile   
         volumes:
-            - '/app/frontend/'
-            - '/app/frontend/node_modules'
+            - '.:/app'
+            - '/app/node_modules'
         ports:
             - 3000:3000
         environment:
