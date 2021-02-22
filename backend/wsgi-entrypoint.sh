@@ -1,7 +1,5 @@
 #!/bin/sh
 
-#!/bin/sh
-
 if [ "$DATABASE" = "postgres" ]
 then
     echo "Waiting for postgres..."
@@ -13,10 +11,9 @@ then
     echo "PostgreSQL started"
 fi
 
-exec "$@"
-
 python manage.py flush --no-input
 python manage.py migrate
-python manage.py collectstatic --noinput
+
+exec "$@"
 
 gunicorn base.wsgi --bind 0.0.0.0:8000 --workers 4 --threads 4
