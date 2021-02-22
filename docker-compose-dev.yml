@@ -4,11 +4,11 @@ services:
     backend:
         container_name: backend_dev
         build:
-            context: .
-            dockerfile: ./docker/backend/Dockerfile.dev   
-        entrypoint: /app/docker/backend/wsgi-entrypoint.sh
+            context: ./backend/
+            dockerfile: Dockerfile.dev   
+        entrypoint: /app/backend/wsgi-entrypoint.sh
         volumes:
-            - static_volume:/app/backend/server/django_static
+            - static_volume:/backend/server/django_static
         env_file:
             - ./.env.dev
         ports:
@@ -18,8 +18,8 @@ services:
     frontend:
         container_name: frontend_dev
         build:
-            context: .
-            dockerfile: ./docker/frontend/Dockerfile   
+            context: ./frontend/
+            dockerfile: Dockerfile   
         volumes:
             - '/app/frontend/'
             - '/app/frontend/node_modules'
