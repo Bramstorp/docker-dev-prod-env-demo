@@ -1,10 +1,5 @@
 #!/bin/sh
 
-until cd /app/backend
-do
-    echo "Waiting for server volume..."
-done
-
 until ./manage.py migrate --noinput
 do
     echo "Waiting for db to be ready..."
