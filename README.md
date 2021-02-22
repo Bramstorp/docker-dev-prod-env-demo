@@ -40,4 +40,4 @@ for the dev we do not run nginx for hosting we just simply use ports here react 
 
 SQL settings for dev and prod can be find in .env.dev and .env.prod
 
-Postgresql settings for prod can be find in .env.prod.db and dev settings can be find in docker-compose-dev.yml
+Postgressql settings for prod can be find in .env.prod.db and dev settings can be find in docker-compose-dev.yml
