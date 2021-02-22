@@ -8,6 +8,7 @@ RUN apk update \
 
 RUN pip install --upgrade pip
 RUN pip install gunicorn
+RUN pip3 install djangorestframework 
 RUN pip install -r backend/requirements.txt
 
 ADD ./docker /app/docker
