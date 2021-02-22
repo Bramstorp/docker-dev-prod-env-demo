@@ -1,7 +1,7 @@
 # pull official base image
 FROM python:3.8.3-alpine
 
-WORKDIR /app
+WORKDIR /usr/src/backend
 
 ADD ./requirements.txt .
 
