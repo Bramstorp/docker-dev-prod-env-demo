@@ -18,9 +18,11 @@ build and run prod docker container - `docker-compose -f docker-compose-prod.yml
 
 # Execute commands within running container
 
-first build and run dev docker container - `docker-compose -f docker-compose-dev.yml up -d --build`
-
 if u wanna run createuser within a container `docker-compose -f docker-compose-dev.yml exec backend python manage.py createsuperuser`
+
+# Execute postgresql termianl within running container
+
+psql terminal `docker-compose -f docker-compose-dev.yml exec db psql --username=DBUSERNAME --dbname=DBNAME`
 
 # Build the images and run the containers for production env:
 
