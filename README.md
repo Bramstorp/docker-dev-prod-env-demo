@@ -10,7 +10,7 @@ Basic demo and test system usting docker react + django + postgressql + nginx
 
 <br>
 
-# Build the images and run the containers:
+# Build the images and run the containers in the background:
 
 build and run dev docker container - `docker-compose -f docker-compose-dev.yml up -d --build`
 
