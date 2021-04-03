@@ -6,7 +6,7 @@ services:
         container_name: nginx_prod
         build:
             context: .
-            dockerfile: ./docker/nginx/Dockerfile.prod
+            dockerfile: ./nginx/Dockerfile.prod
         ports:
             - 80:80
             - 443:443
@@ -20,8 +20,8 @@ services:
         container_name: backend_prod
         build:
             context: .
-            dockerfile: ./docker/backend/Dockerfile.prod
-        entrypoint: /app/docker/backend/wsgi-entrypoint.sh
+            dockerfile: ./backend/Dockerfile.prod
+        entrypoint: /app/backend/wsgi-entrypoint.sh
         volumes:
             - static_volume:/app/backend/base/django_static
         expose:
